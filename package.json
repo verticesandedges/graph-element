@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/verticesandedges/graph-element.git"
+    "url": "https://github.com/verticesandedges/graph-element.git"
   },
   "license": "MIT",
   "author": "Joshua M. Moore <joshua.moore@verticesandedges.net>",
