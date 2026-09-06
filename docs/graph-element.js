@@ -2226,4 +2226,4 @@ if (!customElements.get('edge-el')) customElements.define('edge-el', $8c48e9b773
 
 
 export {$854bed0ac3c3a143$export$ed30cc242fc1c50a as VertexElement, $8c48e9b7732a26f4$export$75516b100afd281b as EdgeElement, $763303308f85086c$export$2512fa2cfc4036cf as GraphElement, $40f3f8b290647dff$export$a002182e51710d39 as Constants};
-//# sourceMappingURL=main.js.map
+//# sourceMappingURL=graph-element.js.map

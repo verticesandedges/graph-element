@@ -23,16 +23,16 @@
   "license": "MIT",
   "author": "Joshua M. Moore <joshua.moore@verticesandedges.net>",
   "type": "module",
-  "main": "docs/main.js",
+  "main": "docs/graph-element.js",
   "types": "docs/types.d.ts",
   "directories": {
     "doc": "docs",
     "test": "tests"
   },
   "scripts": {
-    "watch:lib": "parcel watch --dist-dir docs/ --target main",
-    "watch:demo": "parcel watch --dist-dir docs/ --target demo",
-    "watch:tests": "parcel watch --dist-dir docs/ --target test_page",
+    "watch:lib": "parcel watch --target main",
+    "watch:demo": "parcel watch --target demo",
+    "watch:tests": "parcel watch --target test_page",
     "build:lib": "parcel build --target main",
     "build:demo": "parcel build --target demo",
     "build:tests": "parcel build --target test_page",

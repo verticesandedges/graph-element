@@ -2,7 +2,7 @@ import { Vertex, Edge, DynamicMatching, Octree } from "../src/layout/dynamic-mat
 import { Vector3 } from "three";
 import { expect } from "chai";
 // import { GraphElement, VertexElement, EdgeElement } from "../src/index.ts";
-import { GraphElement, VertexElement, EdgeElement } from "../docs/main.js";
+import { GraphElement, VertexElement, EdgeElement } from "../docs/graph-element.js";
 
 
 mocha.setup('bdd')
