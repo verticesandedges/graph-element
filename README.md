@@ -5,7 +5,7 @@ But back to this library. To create the graph-element, you can use either HTML o
 
 ```html
 <link rel="stylesheet" href="graph-element.[hash].css">
-<script type="module" src="docs/main.js"></script>
+<script type="module" src="dist/index.js"></script>
 <div class="container">
   <graph-el></graph-el>
 </div>
@@ -23,7 +23,7 @@ You can also include initial vertex and edge elements.
 </style>
 
 <!-- include the graph-el web component definition -->
-<script type="module" src="docs/main.js"></script>
+<script type="module" src="dist/index.js"></script>
 
 <!-- graph-element -->
 <graph-el>

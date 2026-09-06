@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A 3D Graph Visualization Web Component",
   "keywords": [
     "3D",
@@ -23,8 +23,31 @@
   "license": "MIT",
   "author": "Joshua M. Moore <joshua.moore@verticesandedges.net>",
   "type": "module",
-  "main": "docs/graph-element.js",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
   "types": "docs/types.d.ts",
+  "targets": {
+    "main": {
+      "isLibrary": true,
+      "includeNodeModules": true,
+      "context": "browser",
+      "outputFormat": "esmodule"
+    },
+    "demo": {
+      "source": "src/index.html",
+      "distDir": "docs/demo",
+      "engines": {
+        "browsers": "> 0.5%, last 2 versions, not dead"
+      }
+    },
+    "test_page": {
+      "source": "test/index.html",
+      "distDir": "docs/test",
+      "engines": {
+        "browsers": "> 0.5%, last 2 versions, not dead"
+      }
+    }
+  },
   "directories": {
     "doc": "docs",
     "test": "test"
@@ -33,13 +56,17 @@
     "watch:lib": "parcel watch --target main",
     "watch:demo": "parcel watch --target demo",
     "watch:test": "parcel watch --target test_page",
+
     "build:lib": "parcel build --target main",
     "build:demo": "parcel build --target demo",
     "build:test": "parcel build --target test_page",
     "build": "parcel build --target main && parcel build --target demo && parcel build --target test_page",
+    
     "start:demo": "http-server docs/demo/ -c-1",
     "start:test": "http-server docs/test -c-1",
-    "clean": "rm -rf .parcel-cache/ docs/",
+    
+    "clean": "rm -rf .parcel-cache/ docs/ dist/",
+    
     "test": "web-test-runner --config web-test-runner.config.js"
   },
   "dependencies": {
@@ -72,26 +99,5 @@
   },
   "overrides": {
     "serialize-javascript": "^7.0.5"
-  },
-  "source": "src/index.ts",
-  "module": "docs/module.js",
-  "targets": {
-    "main": {
-      "isLibrary": true
-    },
-    "demo": {
-      "source": "src/index.html",
-      "distDir": "docs/demo",
-      "engines": {
-        "browsers": "> 0.5%, last 2 versions, not dead"
-      }
-    },
-    "test_page": {
-      "source": "test/index.html",
-      "distDir": "docs/test",
-      "engines": {
-        "browsers": "> 0.5%, last 2 versions, not dead"
-      }
-    }
   }
 }

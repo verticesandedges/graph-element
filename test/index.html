@@ -7,14 +7,20 @@
     <link rel="stylesheet" href="/node_modules/mocha/mocha.css">
   </head>
   <body>
+    <!-- mocha/chai test setup -->
     <div id="mocha"></div>
     <script type="module" src="/node_modules/mocha/index.js"></script>
     <script type="module" src="/node_modules/chai/register-expect.js"></script>
     <script type="module">
       mocha.setup('bdd')
     </script>
+    
+    <!-- tests -->
+    <script type="module" src="./build.browser.spec.ts"></script>
     <script type="module" src="./layout.browser.spec.ts"></script>
     <script type="module" src="./elements.browser.spec.ts"></script>
+
+    <!-- execute tests -->
     <script type="module">
       mocha.run();
     </script>

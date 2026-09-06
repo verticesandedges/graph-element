@@ -1,4 +1,4 @@
-import { GraphElement, VertexElement, EdgeElement } from "../src/index.ts";
+import { GraphElement, VertexElement, EdgeElement } from "../dist/index.js";
 import { expect } from "chai";
 
 describe('Elements', () => {
