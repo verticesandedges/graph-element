@@ -1,5 +1,8 @@
 {
   "name": "@verticesandedges/graph-element",
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "1.0.0",
   "description": "A 3D Graph Visualization Web Component",
   "keywords": [
