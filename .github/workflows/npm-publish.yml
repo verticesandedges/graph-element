@@ -32,11 +32,14 @@ jobs:
           node-version: lts/*
           cache: 'npm'
 
+      - name: Install project dependencies
+        run: npm ci
+
       - name: Install Playwright Browsers and OS dependencies
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
-        run: npx playwright test
+        run: npm test
 
   publish:
     needs: test
