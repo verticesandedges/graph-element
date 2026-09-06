@@ -21,7 +21,7 @@
       "isLibrary": true
     },
     "demo": {
-      "source": "index.html",
+      "source": "src/index.html",
       "distDir": "docs/demo",
       "engines": {
         "browsers": "> 0.5%, last 2 versions, not dead"

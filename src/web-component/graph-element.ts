@@ -35,6 +35,18 @@ export class GraphElement extends HTMLElement {
       const div = this.shadowRoot!.querySelector('div')!;
       this.graph = new Graph( div );
       this.defaults = Object.assign({}, this.graph.defaults);
+    })
+    .then(() => {
+      this.querySelectorAll('vertex-el').forEach((vertex) => {
+        this.graph.addVertex((vertex as VertexElement).readAttributes());
+      })
+      this.querySelectorAll('edge-el').forEach((edge => {
+        const options = (edge as EdgeElement).readAttributes();
+        const sourceId = options.sourceId;
+        const targetId = options.targetId;
+
+        this.graph.addEdge(sourceId, targetId, options);
+      }))
     });
   }
 

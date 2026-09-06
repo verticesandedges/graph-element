@@ -1,0 +1,16 @@
+:host {
+  --bg-color: inherit;
+  --ui-color: inherit;
+  background-color: var(--bg-color, white);
+  --vertex-color: white;
+  --edge-color: slategray;
+  flex-grow: 1;
+  display: flex;
+}
+
+div {
+  background-color: inherit;
+  width: 100%;
+  height: 100%;
+}
+/*# sourceMappingURL=graph-element.1c79afac.css.map */

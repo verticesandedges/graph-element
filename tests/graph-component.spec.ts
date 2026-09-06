@@ -422,13 +422,11 @@ describe('Elements', () => {
     it('should change color', () => {
       const graph = document.createElement('graph-el') as GraphElement;
       document.body.appendChild(graph);
-      const vertex = graph.addVertex();
-
-      vertex.color = 0xff0000
-      vertex.color = 0x0000ff;
+      const vertex = graph.addVertex({color: 'red'});
+      vertex.setAttribute('color', 'blue');
       
       expect(vertex).to.be.instanceof(VertexElement);
-      expect(vertex.getAttribute('color')).to.equal(0x0000ff);
+      expect(vertex.getAttribute('color')).to.equal('blue');
     });
 
     it('should change texture', () => {
@@ -436,9 +434,8 @@ describe('Elements', () => {
       document.body.appendChild(graph);
       const vertex = graph.addVertex() as VertexElement;
 
-      vertex.texture = './Board.png';
-      expect(vertex.texture).to.equal('./Board.png');
-      expect(vertex.vertex.texture).to.equal('./Board.png');
+      vertex.setAttribute('texture', './Board.png');
+      expect(vertex.getAttribute('texture')).to.equal('./Board.png');
     });
 
     it('should change selection color', () => {
@@ -446,9 +443,8 @@ describe('Elements', () => {
       document.body.appendChild(graph);
       const vertex = graph.addVertex() as VertexElement;
 
-      vertex.selectionColor = 0xff0000;
-      expect(vertex.selectionColor).to.equal(0xff0000);
-      expect(vertex.vertex.selectionColor).to.equal(0xff0000);
+      vertex.setAttribute("selectionColor", '0xff0000');
+      expect(vertex.getAttribute('selectionColor')).to.equal('0xff0000');
     });
 
     it('should change size', () => {
@@ -456,9 +452,8 @@ describe('Elements', () => {
       document.body.appendChild(graph);
       const vertex = graph.addVertex() as VertexElement;
 
-      vertex.size = 3.0;
-      expect(vertex.size).to.equal(3.0);
-      expect(vertex.vertex.size).to.equal(3.0);
+      vertex.setAttribute("size", "3.0");
+      expect(vertex.getAttribute('size')).to.equal("3.0");
     });
 
     it('should create a label', () => {
@@ -466,9 +461,8 @@ describe('Elements', () => {
       document.body.appendChild(graph);
       const vertex = graph.addVertex() as VertexElement;
 
-      vertex.label = 'Hello, World!';
-      expect(vertex.label).to.be.instanceof(HTMLLabelElement);
-      expect(vertex.vertex.label).to.be.instanceof(HTMLLabelElement);
+      vertex.setAttribute('label', 'Hello, World!');
+      expect(vertex.getAttribute('label')).to.equal("Hello, World!");
     });
 
     it('should change visibility', () => {
@@ -476,9 +470,8 @@ describe('Elements', () => {
       document.body.appendChild(graph);
       const vertex = graph.addVertex() as VertexElement;
 
-      vertex.visible = false;
-      expect(vertex.visible).to.equal(false);
-      expect(vertex.vertex.visible).to.equal(false);
+      vertex.setAttribute('visible', false);
+      expect(vertex.getAttribute("visible")).to.equal('false');
     });
 
     it('should change selected', () => {
@@ -486,9 +479,8 @@ describe('Elements', () => {
       document.body.appendChild(graph);
       const vertex = graph.addVertex() as VertexElement;
 
-      vertex.selected = true;
-      expect(vertex.selected).to.equal(true);
-      expect(vertex.vertex.selected).to.equal(true);
+      vertex.setAttribute('selected', true);
+      expect(vertex.getAttribute('selected')).to.equal('true');
     });
 
   })
@@ -511,13 +503,11 @@ describe('Elements', () => {
       const b = graph.addVertex({id: 'b'}) as VertexElement;
       const edge = graph.addEdge('#a', '#b') as EdgeElement;
 
-      edge.arrow = true;
-      expect(edge.arrow).to.be.equal(true);
-      expect(edge.edge.arrow).to.be.equal(true);
+      edge.setAttribute('arrow', true);
+      expect(edge.getAttribute('arrow')).to.be.equal('true');
 
-      edge.arrow = false;
-      expect(edge.arrow).to.be.equal(false);
-      expect(edge.edge.arrow).to.be.equal(false);
+      edge.setAttribute('arrow', false);
+      expect(edge.getAttribute('arrow')).to.be.equal('false');
     });
 
     it('should change spline', () => {
@@ -527,13 +517,11 @@ describe('Elements', () => {
       const b = graph.addVertex({id: 'b'}) as VertexElement;
       const edge = graph.addEdge('#a', '#b') as EdgeElement;
       
-      edge.spline = true;
-      expect(edge.spline).to.be.equal(true);
-      expect(edge.edge.spline).to.be.equal(true);
+      edge.setAttribute('spline', true);
+      expect(edge.getAttribute('spline')).to.be.equal('true');
 
-      edge.spline = false;
-      expect(edge.spline).to.be.equal(false);
-      expect(edge.edge.spline).to.be.equal(false);
+      edge.setAttribute('spline', false);
+      expect(edge.getAttribute('spline')).to.be.equal('false');
     });
 
     it('should change visible', () => {
@@ -543,13 +531,11 @@ describe('Elements', () => {
       const b = graph.addVertex({id: 'b'}) as VertexElement;
       const edge = graph.addEdge('#a', '#b') as EdgeElement;
 
-      edge.visible = false;
-      expect(edge.visible).to.be.equal(false);
-      expect(edge.edge.visible).to.be.equal(false);
+      edge.setAttribute("visible", false);
+      expect(edge.getAttribute('visible')).to.be.equal('false');
 
-      edge.visible = true;
-      expect(edge.visible).to.be.equal(true);
-      expect(edge.edge.visible).to.be.equal(true);
+      edge.setAttribute('visible', true);
+      expect(edge.getAttribute('visible')).to.be.equal('true');
     });
 
     it('should change color', () => {
@@ -559,13 +545,11 @@ describe('Elements', () => {
       const b = graph.addVertex({id: 'b'}) as VertexElement;
       const edge = graph.addEdge('#a', '#b') as EdgeElement;
 
-      edge.color = 'red';
-      expect(edge.color).to.be.equal(0xff0000);
-      expect(edge.edge.color).to.be.equal(0xff0000);
+      edge.setAttribute('color', 'red');
+      expect(edge.getAttribute('color')).to.equal('red');
 
-      edge.color = 'blue';
-      expect(edge.color).to.be.equal(0x0000ff);
-      expect(edge.edge.color).to.be.equal(0x0000ff);
+      edge.setAttribute('color', 'blue');
+      expect(edge.getAttribute('color')).to.equal('blue');
     });
 
     it('should change width', () => {
@@ -575,13 +559,11 @@ describe('Elements', () => {
       const b = graph.addVertex({id: 'b'}) as VertexElement;
       const edge = graph.addEdge('#a', '#b') as EdgeElement;
 
-      edge.width = 3.0;
-      expect(edge.width).to.be.equal(3.0);
-      expect(edge.edge.width).to.be.equal(3.0);
+      edge.setAttribute('width', 3.0);
+      expect(edge.getAttribute('width')).to.be.equal('3');
 
-      edge.width = 1.0;
-      expect(edge.width).to.be.equal(1.0);
-      expect(edge.edge.width).to.be.equal(1.0);
+      edge.setAttribute('width', 1.0);
+      expect(edge.getAttribute('width')).to.be.equal('1');
     });
 
     it('should change label', () => {
@@ -591,9 +573,8 @@ describe('Elements', () => {
       const b = graph.addVertex({id: 'b'}) as VertexElement;
       const edge = graph.addEdge('#a', '#b') as EdgeElement;
 
-      edge.label = 'Hello, World!';
-      expect(edge.label).to.be.instanceof(HTMLLabelElement);
-      expect(edge.edge.label).to.be.instanceof(HTMLLabelElement);
+      edge.setAttribute('label', 'Hello, World!');
+      expect(edge.getAttribute('label')).to.equal("Hello, World!");
     });
 
   })
