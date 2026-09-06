@@ -154,7 +154,7 @@ There are several scripts defined in package.json:
 * build:lib
 * build:demo
 * build:tests
-* build:all
+* build
 
 **start commands**
 * start:demo

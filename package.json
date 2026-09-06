@@ -36,7 +36,7 @@
     "build:lib": "parcel build --target main",
     "build:demo": "parcel build --target demo",
     "build:tests": "parcel build --target test_page",
-    "build:all": "parcel build --target main && parcel build --target demo && parcel build --target test_page",
+    "build": "parcel build --target main && parcel build --target demo && parcel build --target test_page",
     "start:demo": "http-server docs/demo/ -c-1",
     "start:tests": "http-server docs/tests -c-1",
     "clean": "rm -rf .parcel-cache/ docs/"
