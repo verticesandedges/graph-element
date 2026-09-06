@@ -1,12 +1,12 @@
-import {Mesh as $8Jfye$Mesh, BoxGeometry as $8Jfye$BoxGeometry, MeshPhongMaterial as $8Jfye$MeshPhongMaterial, Group as $8Jfye$Group, TextureLoader as $8Jfye$TextureLoader, Color as $8Jfye$Color, Scene as $8Jfye$Scene, HemisphereLight as $8Jfye$HemisphereLight, PerspectiveCamera as $8Jfye$PerspectiveCamera, WebGLRenderer as $8Jfye$WebGLRenderer, Vector2 as $8Jfye$Vector2, Raycaster as $8Jfye$Raycaster, Vector3 as $8Jfye$Vector3, Matrix3 as $8Jfye$Matrix3} from "three";
-import {Group as $8Jfye$Group1, CatmullRomCurve3 as $8Jfye$CatmullRomCurve3, CylinderGeometry as $8Jfye$CylinderGeometry, MeshBasicMaterial as $8Jfye$MeshBasicMaterial, Mesh as $8Jfye$Mesh1} from "three/build/three.module";
-import {Line2 as $8Jfye$Line2} from "three/examples/jsm/lines/Line2";
-import {LineGeometry as $8Jfye$LineGeometry} from "three/examples/jsm/lines/LineGeometry";
-import {LineMaterial as $8Jfye$LineMaterial} from "three/examples/jsm/lines/LineMaterial";
+import {Mesh as $8Jfye$Mesh, BoxGeometry as $8Jfye$BoxGeometry, MeshPhongMaterial as $8Jfye$MeshPhongMaterial, Group as $8Jfye$Group, TextureLoader as $8Jfye$TextureLoader, Color as $8Jfye$Color, CatmullRomCurve3 as $8Jfye$CatmullRomCurve3, CylinderGeometry as $8Jfye$CylinderGeometry, MeshBasicMaterial as $8Jfye$MeshBasicMaterial, Scene as $8Jfye$Scene, HemisphereLight as $8Jfye$HemisphereLight, PerspectiveCamera as $8Jfye$PerspectiveCamera, WebGLRenderer as $8Jfye$WebGLRenderer, Vector2 as $8Jfye$Vector2, Raycaster as $8Jfye$Raycaster, Vector3 as $8Jfye$Vector3, Matrix3 as $8Jfye$Matrix3} from "three";
+import {Line2 as $8Jfye$Line2} from "three/examples/jsm/lines/Line2.js";
+import {LineGeometry as $8Jfye$LineGeometry} from "three/examples/jsm/lines/LineGeometry.js";
+import {LineMaterial as $8Jfye$LineMaterial} from "three/examples/jsm/lines/LineMaterial.js";
 import {OrbitControls as $8Jfye$OrbitControls} from "three/examples/jsm/controls/OrbitControls.js";
 import {SelectionBox as $8Jfye$SelectionBox} from "three/examples/jsm/interactive/SelectionBox.js";
 import {SelectionHelper as $8Jfye$SelectionHelper} from "three/examples/jsm/interactive/SelectionHelper.js";
 
+// import { SettingsElement } from './web-component/settings-element';
 
 class $7f86b8c0dd26ac2d$export$3e8a3cc8713efbec {
     static nextId = 0;
@@ -354,7 +354,7 @@ class $93afb3fc7beadade$export$a94506fb574265ab {
    * 
    * @returns a three.Group object for reference by Edge objects.
    */ static generateLine(from, to, options) {
-        const group = new $8Jfye$Group1();
+        const group = new $8Jfye$Group();
         group.name = 'edge-line';
         const geometry = new (0, $8Jfye$LineGeometry)();
         geometry.setFromPoints([
@@ -381,7 +381,7 @@ class $93afb3fc7beadade$export$a94506fb574265ab {
    * 
    * @returns three.Group
    */ static generateSpline(from, to, options, graph) {
-        const group = new $8Jfye$Group1();
+        const group = new $8Jfye$Group();
         group.name = 'edge-spline';
         // dynamicMatching.addVertex returns ids
         const stopA = graph.dynamicMatching.addVertex();
@@ -427,7 +427,7 @@ class $93afb3fc7beadade$export$a94506fb574265ab {
    * @param (LayoutVertex) to
    * @param (object) options 
    */ static generateArrow(from, to, options) {
-        const group = new $8Jfye$Group1();
+        const group = new $8Jfye$Group();
         group.name = 'edge-arrow';
         // create line
         const lineGeo = new (0, $8Jfye$LineGeometry)();
@@ -450,7 +450,7 @@ class $93afb3fc7beadade$export$a94506fb574265ab {
             color: options.color,
             toneMapped: false
         });
-        const cone = new $8Jfye$Mesh1(coneGeo, coneMat);
+        const cone = new $8Jfye$Mesh(coneGeo, coneMat);
         cone.name = 'cone';
         group.add(line);
         group.add(cone);
@@ -467,7 +467,7 @@ class $93afb3fc7beadade$export$a94506fb574265ab {
    * @param {*} graph 
    * @returns 
    */ static generateSplarrow(from, to, options, graph) {
-        const group = new $8Jfye$Group1();
+        const group = new $8Jfye$Group();
         group.name = 'edge-splarrow';
         // line geometry & material
         const stopA = graph.dynamicMatching.addVertex();
@@ -501,7 +501,7 @@ class $93afb3fc7beadade$export$a94506fb574265ab {
             color: options.color,
             toneMapped: false
         });
-        const cone = new $8Jfye$Mesh1(coneGeo, coneMat);
+        const cone = new $8Jfye$Mesh(coneGeo, coneMat);
         cone.name = 'cone';
         group.add(spline);
         group.userData.stops = [

@@ -1,8 +1,8 @@
-import { Edge, EdgeId, EdgeOptions } from '../layout/scene-edge';
-import './vertex-element';
-import type { VertexElement } from './vertex-element';
-import './graph-element';
-import type { GraphElement } from './graph-element';
+import { Edge, type EdgeId, type EdgeOptions } from '../layout/scene-edge.ts';
+import './vertex-element.ts';
+import type { VertexElement } from './vertex-element.ts';
+import './graph-element.ts';
+import type { GraphElement } from './graph-element.ts';
 
 function propName(attrStr: string){
   return attrStr.replace(/-([a-z])/g, (match, letter) => letter.toUpperCase());

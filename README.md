@@ -47,7 +47,7 @@ Here's some examples:
 
 * [Hardcoded tetrahedron source code](src/index.html)
 * [Hardcoded tetrahedron live example](https://verticesandedges.github.io/graph-element/demo/index.html)
-* [Tests](https://verticesandedges.github.io/graph-element/tests/index.html)
+* [Tests](https://verticesandedges.github.io/graph-element/test/index.html)
 
 ## Usage
 To use the library, get an instance of a GraphElement (aka `<graph-el>`), and call `addVertex()`, `addEdge(sel/vertex, sel/vertex)`, `removeVertex(sel/vertex)`, and `removeEdge(sel/edge)`, where sel stands for selector, ie id or className or similar.
@@ -138,7 +138,7 @@ npm install
 npm run build:all
 
 # Then you can run 
-npm run start:tests # or:
+npm run start:test # or:
 npm run start:demo
 ```
 
@@ -148,17 +148,17 @@ There are several scripts defined in package.json:
 **watch commands**
 * watch:lib
 * watch:demo
-* watch:tests
+* watch:test
 
 **build commands**
 * build:lib
 * build:demo
-* build:tests
+* build:test
 * build
 
 **start commands**
 * start:demo
-* start:tests
+* start:test
 
 You should be safe running
 

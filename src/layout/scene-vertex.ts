@@ -1,6 +1,6 @@
 import * as three from "three";
-import { Edge } from "./scene-edge";
-import { Graph } from "./scene-graph";
+import { Edge } from "./scene-edge.ts";
+import { Graph } from "./scene-graph.ts";
 
 export type VertexId = string;
 type Color = string | number | three.Color;

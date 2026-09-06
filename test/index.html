@@ -10,6 +10,13 @@
     <div id="mocha"></div>
     <script type="module" src="/node_modules/mocha/index.js"></script>
     <script type="module" src="/node_modules/chai/register-expect.js"></script>
-    <script type="module" src="./graph-element.spec.ts"></script>
+    <script type="module">
+      mocha.setup('bdd')
+    </script>
+    <script type="module" src="./layout.browser.spec.ts"></script>
+    <script type="module" src="./elements.browser.spec.ts"></script>
+    <script type="module">
+      mocha.run();
+    </script>
   </body>
 </html>

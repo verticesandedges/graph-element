@@ -12,9 +12,9 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { SelectionBox } from "three/examples/jsm/interactive/SelectionBox.js";
 import { SelectionHelper } from "three/examples/jsm/interactive/SelectionHelper.js";
 
-import { Constants, DynamicMatching } from "./dynamic-matching";
-import { Vertex, VertexId, VertexOptions } from "./scene-vertex";
-import { Edge, EdgeId, EdgeOptions } from "./scene-edge";
+import { Constants, DynamicMatching } from "./dynamic-matching.ts";
+import { Vertex, type VertexId, type VertexOptions } from "./scene-vertex.ts";
+import { Edge, type EdgeId, type EdgeOptions } from "./scene-edge.ts";
 
 const wait = async function(delay: number){
   return new Promise((resolve, reject) => setTimeout(resolve, delay));

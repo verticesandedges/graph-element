@@ -1,10 +1,10 @@
 import * as three from 'three';
-import { Line2 } from 'three/examples/jsm/lines/Line2';
-import { LineGeometry } from 'three/examples/jsm/lines/LineGeometry';
-import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial';
-import { LineHelper } from "./line-helper";
-import { Vertex, VertexId, VertexOptions } from './scene-vertex'; 
-import { Graph } from './scene-graph'
+import { Line2 } from 'three/examples/jsm/lines/Line2.js';
+import { LineGeometry } from 'three/examples/jsm/lines/LineGeometry.js';
+import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial.js';
+import { LineHelper } from "./line-helper.ts";
+import { Vertex, VertexId, VertexOptions } from './scene-vertex.ts'; 
+import { Graph } from './scene-graph.ts'
 
 type Color = string | number | three.Color;
 export type EdgeId = string;

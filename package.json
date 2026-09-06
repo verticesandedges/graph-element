@@ -27,19 +27,20 @@
   "types": "docs/types.d.ts",
   "directories": {
     "doc": "docs",
-    "test": "tests"
+    "test": "test"
   },
   "scripts": {
     "watch:lib": "parcel watch --target main",
     "watch:demo": "parcel watch --target demo",
-    "watch:tests": "parcel watch --target test_page",
+    "watch:test": "parcel watch --target test_page",
     "build:lib": "parcel build --target main",
     "build:demo": "parcel build --target demo",
-    "build:tests": "parcel build --target test_page",
+    "build:test": "parcel build --target test_page",
     "build": "parcel build --target main && parcel build --target demo && parcel build --target test_page",
     "start:demo": "http-server docs/demo/ -c-1",
-    "start:tests": "http-server docs/tests -c-1",
-    "clean": "rm -rf .parcel-cache/ docs/"
+    "start:test": "http-server docs/test -c-1",
+    "clean": "rm -rf .parcel-cache/ docs/",
+    "test": "web-test-runner --config web-test-runner.config.js"
   },
   "dependencies": {
     "three": "^0.183.2"
@@ -49,14 +50,20 @@
     "@parcel/transformer-typescript-tsc": "^2.16.4",
     "@parcel/transformer-typescript-types": "^2.16.4",
     "@types/chai": "^5.2.3",
+    "@types/jsdom": "^30.0.0",
     "@types/mocha": "^10.0.10",
     "@types/three": "^0.183.1",
+    "@web/dev-server-esbuild": "^2.0.0",
+    "@web/test-runner": "^1.0.0",
+    "@web/test-runner-playwright": "^1.0.0",
     "buffer": "^6.0.3",
     "chai": "^6.2.2",
     "events": "^3.3.0",
+    "jsdom": "^30.0.1",
     "mocha": "^11.3.0",
     "parcel": "latest",
     "path-browserify": "^1.0.1",
+    "playwright": "^1.63.0",
     "process": "^0.11.10",
     "stream-browserify": "^3.0.0",
     "tsx": "^4.21.0",
@@ -80,8 +87,8 @@
       }
     },
     "test_page": {
-      "source": "tests/index.html",
-      "distDir": "docs/tests",
+      "source": "test/index.html",
+      "distDir": "docs/test",
       "engines": {
         "browsers": "> 0.5%, last 2 versions, not dead"
       }

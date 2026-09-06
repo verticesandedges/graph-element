@@ -1,10 +1,9 @@
-import { Graph } from '../layout/scene-graph';
-import { VertexOptions } from '../layout/scene-vertex';
-import { EdgeOptions } from '../layout/scene-edge';
-import { VertexElement } from './vertex-element';
-import { EdgeElement } from './edge-element';
-
-import { Constants } from '../layout/dynamic-matching';
+import { Graph } from '../layout/scene-graph.ts';
+import { type VertexOptions } from '../layout/scene-vertex.ts';
+import { type EdgeOptions } from '../layout/scene-edge.ts';
+import { VertexElement } from './vertex-element.ts';
+import { EdgeElement } from './edge-element.ts';
+import { Constants } from '../layout/dynamic-matching.ts';
 
 function propName(attrStr: string){
   return attrStr.replace(/-([a-z])/g, (match, letter) => letter.toUpperCase());
