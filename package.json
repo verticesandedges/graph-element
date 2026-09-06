@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A 3D Graph Visualization Web Component",
   "keywords": [
     "3D",
@@ -56,17 +56,13 @@
     "watch:lib": "parcel watch --target main",
     "watch:demo": "parcel watch --target demo",
     "watch:test": "parcel watch --target test_page",
-
     "build:lib": "parcel build --target main",
     "build:demo": "parcel build --target demo",
     "build:test": "parcel build --target test_page",
     "build": "parcel build --target main && parcel build --target demo && parcel build --target test_page",
-    
     "start:demo": "http-server docs/demo/ -c-1",
     "start:test": "http-server docs/test -c-1",
-    
     "clean": "rm -rf .parcel-cache/ docs/ dist/",
-    
     "test": "web-test-runner --config web-test-runner.config.js"
   },
   "dependencies": {
