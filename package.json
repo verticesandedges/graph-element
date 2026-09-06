@@ -1,6 +1,6 @@
 {
-  "name": "graph-component",
-  "version": "0.0.1",
+  "name": "@verticesandedges/graph-element",
+  "version": "1.0.0",
   "description": "A 3D Graph Visualization Web Component",
   "keywords": [
     "3D",
@@ -9,31 +9,37 @@
     "Web",
     "Component"
   ],
-  "license": "UNLICENSED",
+  "homepage": "https://github.com/verticesandedges/graph-element#readme",
+  "bugs": {
+    "url": "https://github.com/verticesandedges/graph-element/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/verticesandedges/graph-element.git"
+  },
+  "license": "MIT",
   "author": "Joshua M. Moore <joshua.moore@verticesandedges.net>",
   "type": "module",
-  "source": "src/index.ts",
   "main": "docs/main.js",
-  "module": "docs/module.js",
   "types": "docs/types.d.ts",
-  "targets": {
-    "main": {
-      "isLibrary": true
-    },
-    "demo": {
-      "source": "src/index.html",
-      "distDir": "docs/demo",
-      "engines": {
-        "browsers": "> 0.5%, last 2 versions, not dead"
-      }
-    },
-    "test_page": {
-      "source": "tests/index.html",
-      "distDir": "docs/tests",
-      "engines": {
-        "browsers": "> 0.5%, last 2 versions, not dead"
-      }
-    }
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "watch:lib": "parcel watch --dist-dir docs/ --target main",
+    "watch:demo": "parcel watch --dist-dir docs/ --target demo",
+    "watch:tests": "parcel watch --dist-dir docs/ --target test_page",
+    "build:lib": "parcel build --target main",
+    "build:demo": "parcel build --target demo",
+    "build:tests": "parcel build --target test_page",
+    "build:all": "parcel build --target main && parcel build --target demo && parcel build --target test_page",
+    "start:demo": "http-server docs/demo/ -c-1",
+    "start:tests": "http-server docs/tests -c-1",
+    "clean": "rm -rf .parcel-cache/ docs/"
+  },
+  "dependencies": {
+    "three": "^0.183.2"
   },
   "devDependencies": {
     "@parcel/packager-ts": "^2.16.4",
@@ -54,25 +60,28 @@
     "typescript": "^6.0.2",
     "util": "^0.12.5"
   },
-  "scripts": {
-    "watch:lib":   "parcel watch --dist-dir docs/ --target main",
-    "watch:demo":  "parcel watch --dist-dir docs/ --target demo",
-    "watch:tests": "parcel watch --dist-dir docs/ --target test_page",
-
-    "build:lib":   "parcel build --target main",
-    "build:demo":  "parcel build --target demo",
-    "build:tests": "parcel build --target test_page",
-    "build:all":   "parcel build --target main && parcel build --target demo && parcel build --target test_page",
-    
-    "start:demo":  "http-server docs/demo/ -c-1",
-    "start:tests": "http-server docs/tests -c-1",
-    
-    "clean":       "rm -rf .parcel-cache/ docs/"
-  },
-  "dependencies": {
-    "three": "^0.183.2"
-  },
   "overrides": {
     "serialize-javascript": "^7.0.5"
+  },
+  "source": "src/index.ts",
+  "module": "docs/module.js",
+  "targets": {
+    "main": {
+      "isLibrary": true
+    },
+    "demo": {
+      "source": "src/index.html",
+      "distDir": "docs/demo",
+      "engines": {
+        "browsers": "> 0.5%, last 2 versions, not dead"
+      }
+    },
+    "test_page": {
+      "source": "tests/index.html",
+      "distDir": "docs/tests",
+      "engines": {
+        "browsers": "> 0.5%, last 2 versions, not dead"
+      }
+    }
   }
 }
