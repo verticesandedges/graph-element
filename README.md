@@ -161,7 +161,7 @@ There are several scripts defined in package.json:
 * start:test
 
 You should be safe running
-
 ```bash
-npm run build:all
+npm run build
 ```
+which builds the tests, the demo, and the library itself.
