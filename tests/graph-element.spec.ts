@@ -1,7 +1,9 @@
 import { Vertex, Edge, DynamicMatching, Octree } from "../src/layout/dynamic-matching.ts";
 import { Vector3 } from "three";
 import { expect } from "chai";
-import { GraphElement, VertexElement, EdgeElement } from "../src/index.ts";
+// import { GraphElement, VertexElement, EdgeElement } from "../src/index.ts";
+import { GraphElement, VertexElement, EdgeElement } from "../docs/main.js";
+
 
 mocha.setup('bdd')
 

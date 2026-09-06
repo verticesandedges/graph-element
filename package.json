@@ -55,19 +55,19 @@
     "util": "^0.12.5"
   },
   "scripts": {
-    "watch:lib": "parcel watch --dist-dir docs/ --target main",
-    "watch:demo": "parcel watch --dist-dir docs/ --target demo",
+    "watch:lib":   "parcel watch --dist-dir docs/ --target main",
+    "watch:demo":  "parcel watch --dist-dir docs/ --target demo",
     "watch:tests": "parcel watch --dist-dir docs/ --target test_page",
 
-    "build:lib": "parcel build --dist-dir docs/ --target main",
-    "build:demo": "parcel build --dist-dir docs/ --target demo",
-    "build:tests": "parcel build --dist-dir docs/ --target test_page --no-scope-hoist",
-    "build:all": "parcel build --dist-dir docs/ --target main --target demo --target test_page --no-scope-hoist",
+    "build:lib":   "parcel build --target main",
+    "build:demo":  "parcel build --target demo",
+    "build:tests": "parcel build --target test_page",
+    "build:all":   "parcel build --target main && parcel build --target demo && parcel build --target test_page",
     
-    "start:demo": "http-server docs/demo/ -c-1",
+    "start:demo":  "http-server docs/demo/ -c-1",
     "start:tests": "http-server docs/tests -c-1",
     
-    "clean": "rm -rf .parcel-cache/ docs/"
+    "clean":       "rm -rf .parcel-cache/ docs/"
   },
   "dependencies": {
     "three": "^0.183.2"
