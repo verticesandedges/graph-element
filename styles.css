@@ -1,0 +1,17 @@
+html, body {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+graph-el {
+  width: 100vw;
+  height: 100vh;
+  border: 1px solid black;
+  overflow: auto;
+  resize: both;
+}

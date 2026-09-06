@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",                // Modern target for browser/node
+    "module": "ESNext",                // Modern module system
+    "moduleResolution": "bundler",
+    "lib": ["DOM", "ESNext"],          // Required for index.html/browser APIs
+    "declaration": true,               // Generate .d.ts for library
+    "declarationMap": true,            // Map types for better IDE support
+    "sourceMap": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"],             // Include all app/lib files
+  "exclude": ["node_modules", "dist"]
+}

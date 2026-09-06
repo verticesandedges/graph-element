@@ -1,0 +1,78 @@
+{
+  "name": "graph-component",
+  "version": "0.0.1",
+  "description": "A 3D Graph Visualization Web Component",
+  "keywords": [
+    "3D",
+    "Graph",
+    "Visualization",
+    "Web",
+    "Component"
+  ],
+  "license": "UNLICENSED",
+  "author": "Joshua M. Moore <joshua.moore@verticesandedges.net>",
+  "type": "module",
+  "source": "src/index.ts",
+  "main": "docs/main.js",
+  "module": "docs/module.js",
+  "types": "docs/types.d.ts",
+  "targets": {
+    "main": {
+      "isLibrary": true
+    },
+    "demo": {
+      "source": "index.html",
+      "distDir": "docs/demo",
+      "engines": {
+        "browsers": "> 0.5%, last 2 versions, not dead"
+      }
+    },
+    "test_page": {
+      "source": "tests/index.html",
+      "distDir": "docs/tests",
+      "engines": {
+        "browsers": "> 0.5%, last 2 versions, not dead"
+      }
+    }
+  },
+  "devDependencies": {
+    "@parcel/packager-ts": "^2.16.4",
+    "@parcel/transformer-typescript-tsc": "^2.16.4",
+    "@parcel/transformer-typescript-types": "^2.16.4",
+    "@types/chai": "^5.2.3",
+    "@types/mocha": "^10.0.10",
+    "@types/three": "^0.183.1",
+    "buffer": "^6.0.3",
+    "chai": "^6.2.2",
+    "events": "^3.3.0",
+    "mocha": "^11.3.0",
+    "parcel": "latest",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2",
+    "util": "^0.12.5"
+  },
+  "scripts": {
+    "watch:lib": "parcel watch --dist-dir docs/ --target main",
+    "watch:demo": "parcel watch --dist-dir docs/ --target demo",
+    "watch:tests": "parcel watch --dist-dir docs/ --target test_page",
+
+    "build:lib": "parcel build --dist-dir docs/ --target main",
+    "build:demo": "parcel build --dist-dir docs/ --target demo",
+    "build:tests": "parcel build --dist-dir docs/ --target test_page --no-scope-hoist",
+    "build:all": "parcel build --dist-dir docs/ --target main --target demo --target test_page --no-scope-hoist",
+    
+    "start:demo": "http-server docs/demo/ -c-1",
+    "start:tests": "http-server docs/tests -c-1",
+    
+    "clean": "rm -rf .parcel-cache/ docs/"
+  },
+  "dependencies": {
+    "three": "^0.183.2"
+  },
+  "overrides": {
+    "serialize-javascript": "^7.0.5"
+  }
+}

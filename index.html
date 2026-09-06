@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet", href="./styles.css">
+    <script type="module" src="src/index.ts"></script>
+  </head>
+  <body>
+    <graph-el>
+      <vertex-el id="a" class="first" color="black"></vertex-el>
+      <vertex-el id="b" class="second" color="red"></vertex-el>
+      <vertex-el id="c"></vertex-el>
+      <edge-el source="#a" target=".second" color="green"></edge-el>
+      <edge-el source="#b" target="#c" color="blue"></edge-el>
+      <edge-el source="#c" target="#a" color="purple"></edge-el>
+      <vertex-el id="d" class="first" color="orange"></vertex-el>
+      <edge-el source="#d" target="#a" color="cyan"></edge-el>
+      <edge-el source="#d" target="#b" color="magenta"></edge-el>
+      <edge-el source="#d" target="#c" color="yellow"></edge-el>
+    </graph-el>
+  </body>
+</html>
