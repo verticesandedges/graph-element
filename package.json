@@ -63,7 +63,8 @@
     "start:demo": "http-server docs/demo/ -c-1",
     "start:test": "http-server docs/test -c-1",
     "clean": "rm -rf .parcel-cache/ docs/ dist/",
-    "test": "web-test-runner --config web-test-runner.config.js"
+    "test": "web-test-runner --config web-test-runner.config.js",
+    "export": "npm run clean && npm run build:lib && cp dist/* ../notebook/static/examples/."
   },
   "dependencies": {
     "three": "^0.183.2"

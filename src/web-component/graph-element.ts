@@ -116,7 +116,7 @@ export class GraphElement extends HTMLElement {
   }
 
   async fetchTemplate(): Promise<void> {
-    this.shadowRoot!.innerHTML = '<div></div>';
+    this.shadowRoot!.innerHTML = '<div class="graph-container"></div>';
   }
 
   attributeChangedCallback(attr: string, old: string, value: string){
