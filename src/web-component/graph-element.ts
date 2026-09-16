@@ -109,8 +109,28 @@ export class GraphElement extends HTMLElement {
 
   async fetchStyle(): Promise<void> {
     const sheet = new CSSStyleSheet();
-    const file = await fetch(new URL('./graph-element.css', import.meta.url));
-    const css = await file.text();
+    //const file = await fetch(new URL('./graph-element.css', import.meta.url));
+    //const css = await file.text();
+    const css = `
+      :host {
+        display: flex;
+        flex-grow: 1;
+        --bg-color: inherit;
+        --ui-color: inherit;
+        background-color: var(--bg-color, white);
+        --vertex-color: white;
+        --edge-color: slategray;
+      }
+
+      div.graph-container {
+        display: block;
+        position: relative;
+        width: 100%; 
+        height: 100%;
+        background-color: inherit;
+        overflow: hidden;
+      }
+    `;
     sheet.replaceSync(css);
     this.shadowRoot!.adoptedStyleSheets = [sheet];
   }
