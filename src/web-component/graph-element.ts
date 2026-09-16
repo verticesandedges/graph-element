@@ -123,8 +123,7 @@ export class GraphElement extends HTMLElement {
       }
 
       div.graph-container {
-        display: block;
-        position: relative;
+        display:block;
         width: 100%; 
         height: 100%;
         background-color: inherit;

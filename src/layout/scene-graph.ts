@@ -479,11 +479,11 @@ export class Graph {
       const halfWidth = canvas.clientWidth / 2;
       const halfHeight = canvas.clientHeight / 2;
       
-      label.style.left = `${(pos.x * halfWidth) + halfWidth}px`;
-      label.style.top = `${(-pos.y * halfHeight) + halfHeight}px`;
+      // label.style.left = `${(pos.x * halfWidth) + halfWidth}px`;
+      // label.style.top = `${(-pos.y * halfHeight) + halfHeight}px`;
 
-      // label.style.left  = `${rect.x + (pos.x * halfWidth)  + halfWidth }px`;
-      // label.style.top   = `${rect.y - (pos.y * halfHeight) + halfHeight}px`;
+      label.style.left  = `${rect.x + (pos.x * halfWidth)  + halfWidth }px`;
+      label.style.top   = `${rect.y - (pos.y * halfHeight) + halfHeight}px`;
     });
   }
 

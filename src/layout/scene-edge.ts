@@ -97,7 +97,7 @@ export class Edge {
 
       label.style.display = 'block';
       label.style.zIndex = '1';
-      label.style.position = 'absolute';
+      label.style.position = 'fixed';
 
       this.#label = label;
     }
@@ -108,7 +108,7 @@ export class Edge {
 
       label.style.display = 'block';
       label.style.zIndex = '1';
-      label.style.position = 'absolute';
+      label.style.position = 'fixed';
 
       this.#label = label;
     }
