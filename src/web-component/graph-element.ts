@@ -122,12 +122,17 @@ export class GraphElement extends HTMLElement {
         --edge-color: slategray;
       }
 
-      div.graph-container {
+      .graph-container {
         display:block;
+        position: relative;
         width: 100%; 
         height: 100%;
         background-color: inherit;
         overflow: hidden;
+      }
+
+      .graph-container label {
+        position: absolute;
       }
     `;
     sheet.replaceSync(css);

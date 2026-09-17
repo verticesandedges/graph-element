@@ -51784,7 +51784,7 @@ class $2448d7118068346d$export$3e8a3cc8713efbec {
             (this.#graph?.parent).appendChild(label);
             label.style.display = 'block';
             label.style.zIndex = '1';
-            label.style.position = 'fixed';
+            label.style.position = 'absolute';
             this.#label = label;
         }
         if (text instanceof HTMLLabelElement) {
@@ -51792,7 +51792,7 @@ class $2448d7118068346d$export$3e8a3cc8713efbec {
             (this.#graph?.parent).appendChild(label);
             label.style.display = 'block';
             label.style.zIndex = '1';
-            label.style.position = 'fixed';
+            label.style.position = 'absolute';
             this.#label = label;
         }
     }
@@ -56034,6 +56034,7 @@ class $c435283fdeac35a5$export$614db49f3febe941 {
         const projectionScreenMatrix = new $9bfcccd3418b958f$export$2ae72fc923e5eb5();
         projectionScreenMatrix.multiplyMatrices(this.#camera.projectionMatrix, this.#camera.matrixWorldInverse);
         frustum.setFromProjectionMatrix(projectionScreenMatrix);
+        console.log("inView", frustum.intersectsObject(object));
         return frustum.intersectsObject(object);
     }
     // todo: middle of a spline curve
@@ -56084,10 +56085,10 @@ class $c435283fdeac35a5$export$614db49f3febe941 {
             const rect = canvas.getBoundingClientRect();
             const halfWidth = canvas.clientWidth / 2;
             const halfHeight = canvas.clientHeight / 2;
-            // label.style.left = `${(pos.x * halfWidth) + halfWidth}px`;
-            // label.style.top = `${(-pos.y * halfHeight) + halfHeight}px`;
-            label.style.left = `${rect.x + pos.x * halfWidth + halfWidth}px`;
-            label.style.top = `${rect.y - pos.y * halfHeight + halfHeight}px`;
+            label.style.left = `${pos.x * halfWidth + halfWidth}px`;
+            label.style.top = `${-pos.y * halfHeight + halfHeight}px`;
+        // label.style.left  = `${rect.x + (pos.x * halfWidth)  + halfWidth }px`;
+        // label.style.top   = `${rect.y - (pos.y * halfHeight) + halfHeight}px`;
         });
     }
     #toClientCoords(scenePos, camera, canvas) {
@@ -56236,12 +56237,17 @@ class $50ff008ced2a2015$export$2512fa2cfc4036cf extends HTMLElement {
         --edge-color: slategray;
       }
 
-      div.graph-container {
+      .graph-container {
         display:block;
+        position: relative;
         width: 100%; 
         height: 100%;
         background-color: inherit;
         overflow: hidden;
+      }
+
+      .graph-container label {
+        position: absolute;
       }
     `;
         sheet.replaceSync(css);
