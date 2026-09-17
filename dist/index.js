@@ -53488,7 +53488,7 @@ class $03c182f8deb91806$export$b9d9805c9b77a56d {
             (this.#graph?.parent).appendChild(label);
             label.style.display = 'block';
             label.style.zIndex = '1';
-            label.style.position = 'fixed';
+            label.style.position = 'absolute';
             this.#label = label;
         }
         if (text instanceof HTMLLabelElement) {
@@ -53496,7 +53496,7 @@ class $03c182f8deb91806$export$b9d9805c9b77a56d {
             (this.#graph?.parent).appendChild(label);
             label.style.display = 'block';
             label.style.zIndex = '1';
-            label.style.position = 'fixed';
+            label.style.position = 'absolute';
             this.#label = label;
         }
     }
