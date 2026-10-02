@@ -51720,6 +51720,7 @@ class $2448d7118068346d$export$3e8a3cc8713efbec {
         }
         const loader = new $9bfcccd3418b958f$export$fd1bfc71f64c538c();
         const texture = loader.load(src);
+        texture.colorSpace = $9bfcccd3418b958f$export$561f394b24edfcaa;
         const material = new $9bfcccd3418b958f$export$5023a9a8114806b8({
             map: texture
         });

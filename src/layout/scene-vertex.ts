@@ -130,9 +130,10 @@ export class Vertex {
 
     const loader = new three.TextureLoader();
     const texture = loader.load(src);
+    texture.colorSpace = three.SRGBColorSpace;
     const material = new three.MeshLambertMaterial({ map: texture });
     this.#cube!.material = material;
-    this.#cube!.material.needsUpdate = true;
+    this.#cube!.material.needsUpdate = true ;
     this.#texture = src;
   }
 
