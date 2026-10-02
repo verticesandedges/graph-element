@@ -55779,10 +55779,15 @@ class $c435283fdeac35a5$export$614db49f3febe941 {
         // using the threejs library to create a scene
         this.#scene = new $9bfcccd3418b958f$export$38af1803e3442a7f();
         // light
-        this.#skyColor = 0xffffff;
-        this.#groundColor = 0x878787;
-        this.#intensity = 85.0;
-        this.#light = new $9bfcccd3418b958f$export$8d474f55edbb9624(this.#skyColor, this.#groundColor);
+        /*
+    this.#skyColor = 0xffffff;
+    this.#groundColor = 0x878787;
+    this.#intensity = 85.0;
+    this.#light = new three.HemisphereLight( 
+      this.#skyColor,
+      this.#groundColor 
+    );
+    */ this.#light = new $9bfcccd3418b958f$export$af279bfef9ec2c96(0x404040);
         this.#scene.add(this.#light);
         // the camera lets us look into the scene
         this.#camera = new $9bfcccd3418b958f$export$74e4ae24825f68d7(75, elem.clientWidth / elem.clientHeight, 0.1, 1000);

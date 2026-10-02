@@ -52,6 +52,7 @@ export class Graph {
     this.#scene = new three.Scene();
     
     // light
+    /*
     this.#skyColor = 0xffffff;
     this.#groundColor = 0x878787;
     this.#intensity = 85.0;
@@ -59,6 +60,8 @@ export class Graph {
       this.#skyColor,
       this.#groundColor 
     );
+    */
+    this.#light = new three.AmbientLight(0x404040);
     this.#scene.add( this.#light );
     
     // the camera lets us look into the scene
