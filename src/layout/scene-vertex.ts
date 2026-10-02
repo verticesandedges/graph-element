@@ -130,7 +130,7 @@ export class Vertex {
 
     const loader = new three.TextureLoader();
     const texture = loader.load(src);
-    const material = new three.MeshPhongMaterial({ map: texture });
+    const material = new three.MeshLambertMaterial({ map: texture });
     this.#cube!.material = material;
     this.#cube!.material.needsUpdate = true;
     this.#texture = src;
