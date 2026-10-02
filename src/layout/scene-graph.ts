@@ -61,7 +61,7 @@ export class Graph {
       this.#groundColor 
     );
     */
-    this.#light = new three.AmbientLight(0x404040);
+    this.#light = new three.AmbientLight(0xffffff);
     this.#scene.add( this.#light );
     
     // the camera lets us look into the scene
