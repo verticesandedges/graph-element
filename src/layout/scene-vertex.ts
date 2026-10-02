@@ -41,7 +41,8 @@ export class Vertex {
 
     this.#cube = new three.Mesh(
       new three.BoxGeometry( 1, 1, 1 ),
-      new three.MeshPhongMaterial( { "color": options.color } )
+      new three.MeshBasicMaterial({ "color": options.color })
+      //new three.MeshPhongMaterial( { "color": options.color } )
     );
     this.#cube.name = 'cube';
     
@@ -49,7 +50,8 @@ export class Vertex {
 
     this.#wire = new three.Mesh( 
       new three.BoxGeometry( 1.25, 1.25, 1.25 ),
-      new three.MeshPhongMaterial({ wireframe: true, "color": options.selectionColor })
+      new three.MeshBasicMaterial({ wireframe: true, "color": options.selectionColor }),
+      //new three.MeshPhongMaterial({ wireframe: true, "color": options.selectionColor })
     );
     this.#wire.visible = false;
     this.#wire.name = 'wire';
@@ -94,17 +96,20 @@ export class Vertex {
   }
 
   get color(): number {
-    return (this.#cube?.material as three.MeshPhongMaterial).color.getHex();
+    return (this.#cube?.material as three.MeshBasicMaterial).color.getHex(); 
+    //return (this.#cube?.material as three.MeshPhongMaterial).color.getHex();
   }
 
   set color( color: string | number | three.Color ){
-    (this.#cube?.material as three.MeshPhongMaterial).color.set( color );
+    (this.#cube?.material as three.MeshBasicMaterial).color.set( color );
+    //(this.#cube?.material as three.MeshPhongMaterial).color.set( color );
     this.#color = color;
   }
 
   resetColor( color: number | string | three.Color ){
-    console.assert(this.#cube !== null, "Cube not defined")
-    const material = new three.MeshPhongMaterial({ color })
+    console.assert(this.#cube !== null, "Cube not defined");
+    const material = new three.MeshBasicMaterial({ color });
+    //const material = new three.MeshPhongMaterial({ color })
     this.#cube!.material = material;
     this.#cube!.material.needsUpdate = true;
   }
@@ -115,7 +120,8 @@ export class Vertex {
 
   set texture(src: string | null){
     if(!src){
-      const material = new three.MeshPhongMaterial({ color: this.color });
+      const material = new three.MeshBasicMaterial({ color: this.color });
+      //const material = new three.MeshPhongMaterial({ color: this.color });
       this.#cube!.material = material;
       this.#cube!.material.needsUpdate = true;
       this.#texture = null;
@@ -131,11 +137,13 @@ export class Vertex {
   }
 
   get selectionColor(): number {
-    return (this.#wire!.material as three.MeshPhongMaterial).color.getHex();
+    return (this.#wire!.material as three.MeshBasicMaterial).color.getHex();
+    //return (this.#wire!.material as three.MeshPhongMaterial).color.getHex();
   }
 
   set selectionColor( color: string | number | three.Color ){
-    (this.#wire!.material as three.MeshPhongMaterial).color.set( color );
+    (this.#wire!.material as three.MeshBasicMaterial).color.set( color );
+    // (this.#wire!.material as three.MeshPhongMaterial).color.set( color );
   }
 
   get size(): number {
@@ -241,9 +249,11 @@ export class Vertex {
   remove(): void {
     this.#graph.removeVertex(this.id);
     this.#cube?.geometry.dispose();
-    (this.#cube?.material as three.MeshPhongMaterial).dispose();
+    (this.#cube?.material as three.MeshBasicMaterial).dispose();
+    //(this.#cube?.material as three.MeshPhongMaterial).dispose();
     this.#wire?.geometry.dispose();
-    (this.#wire?.material as three.MeshPhongMaterial).dispose();
+    (this.#wire?.material as three.MeshBasicMaterial).dispose();
+    //(this.#wire?.material as three.MeshPhongMaterial).dispose();
   }
 
   // aliases

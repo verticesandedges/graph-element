@@ -51645,12 +51645,12 @@ class $2448d7118068346d$export$3e8a3cc8713efbec {
         this.#graph = graph;
         this.#id = options?.id ?? $2448d7118068346d$export$3e8a3cc8713efbec.id();
         options = Object.assign({}, graph.defaults.vertex, options);
-        this.#cube = new $9bfcccd3418b958f$export$e176487c05830cc5(new $9bfcccd3418b958f$export$33e43285f7406bd5(1, 1, 1), new $9bfcccd3418b958f$export$24c72f71cbaf0678({
+        this.#cube = new $9bfcccd3418b958f$export$e176487c05830cc5(new $9bfcccd3418b958f$export$33e43285f7406bd5(1, 1, 1), new $9bfcccd3418b958f$export$55cbcc9b622fe1f5({
             "color": options.color
         }));
         this.#cube.name = 'cube';
         this.#spline = options.spline ?? false;
-        this.#wire = new $9bfcccd3418b958f$export$e176487c05830cc5(new $9bfcccd3418b958f$export$33e43285f7406bd5(1.25, 1.25, 1.25), new $9bfcccd3418b958f$export$24c72f71cbaf0678({
+        this.#wire = new $9bfcccd3418b958f$export$e176487c05830cc5(new $9bfcccd3418b958f$export$33e43285f7406bd5(1.25, 1.25, 1.25), new $9bfcccd3418b958f$export$55cbcc9b622fe1f5({
             wireframe: true,
             "color": options.selectionColor
         }));
@@ -51688,16 +51688,19 @@ class $2448d7118068346d$export$3e8a3cc8713efbec {
     }
     get color() {
         return (this.#cube?.material).color.getHex();
+    //return (this.#cube?.material as three.MeshPhongMaterial).color.getHex();
     }
     set color(color) {
         (this.#cube?.material).color.set(color);
+        //(this.#cube?.material as three.MeshPhongMaterial).color.set( color );
         this.#color = color;
     }
     resetColor(color) {
         console.assert(this.#cube !== null, "Cube not defined");
-        const material = new $9bfcccd3418b958f$export$24c72f71cbaf0678({
+        const material = new $9bfcccd3418b958f$export$55cbcc9b622fe1f5({
             color: color
         });
+        //const material = new three.MeshPhongMaterial({ color })
         this.#cube.material = material;
         this.#cube.material.needsUpdate = true;
     }
@@ -51706,9 +51709,10 @@ class $2448d7118068346d$export$3e8a3cc8713efbec {
     }
     set texture(src) {
         if (!src) {
-            const material = new $9bfcccd3418b958f$export$24c72f71cbaf0678({
+            const material = new $9bfcccd3418b958f$export$55cbcc9b622fe1f5({
                 color: this.color
             });
+            //const material = new three.MeshPhongMaterial({ color: this.color });
             this.#cube.material = material;
             this.#cube.material.needsUpdate = true;
             this.#texture = null;
@@ -51725,9 +51729,11 @@ class $2448d7118068346d$export$3e8a3cc8713efbec {
     }
     get selectionColor() {
         return this.#wire.material.color.getHex();
+    //return (this.#wire!.material as three.MeshPhongMaterial).color.getHex();
     }
     set selectionColor(color) {
         this.#wire.material.color.set(color);
+    // (this.#wire!.material as three.MeshPhongMaterial).color.set( color );
     }
     get size() {
         return this.#size;
@@ -51803,8 +51809,10 @@ class $2448d7118068346d$export$3e8a3cc8713efbec {
         this.#graph.removeVertex(this.id);
         this.#cube?.geometry.dispose();
         (this.#cube?.material).dispose();
+        //(this.#cube?.material as three.MeshPhongMaterial).dispose();
         this.#wire?.geometry.dispose();
         (this.#wire?.material).dispose();
+    //(this.#wire?.material as three.MeshPhongMaterial).dispose();
     }
     // aliases
     get position() {
