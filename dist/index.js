@@ -55788,7 +55788,7 @@ class $c435283fdeac35a5$export$614db49f3febe941 {
       this.#skyColor,
       this.#groundColor 
     );
-    */ this.#light = new $9bfcccd3418b958f$export$af279bfef9ec2c96(0xffffff);
+    */ this.#light = new $9bfcccd3418b958f$export$af279bfef9ec2c96(0xffffff, 1.5);
         this.#scene.add(this.#light);
         // the camera lets us look into the scene
         this.#camera = new $9bfcccd3418b958f$export$74e4ae24825f68d7(75, elem.clientWidth / elem.clientHeight, 0.1, 1000);
