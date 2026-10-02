@@ -51720,7 +51720,7 @@ class $2448d7118068346d$export$3e8a3cc8713efbec {
         }
         const loader = new $9bfcccd3418b958f$export$fd1bfc71f64c538c();
         const texture = loader.load(src);
-        const material = new $9bfcccd3418b958f$export$24c72f71cbaf0678({
+        const material = new $9bfcccd3418b958f$export$5023a9a8114806b8({
             map: texture
         });
         this.#cube.material = material;
