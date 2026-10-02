@@ -51645,12 +51645,12 @@ class $2448d7118068346d$export$3e8a3cc8713efbec {
         this.#graph = graph;
         this.#id = options?.id ?? $2448d7118068346d$export$3e8a3cc8713efbec.id();
         options = Object.assign({}, graph.defaults.vertex, options);
-        this.#cube = new $9bfcccd3418b958f$export$e176487c05830cc5(new $9bfcccd3418b958f$export$33e43285f7406bd5(1, 1, 1), new $9bfcccd3418b958f$export$55cbcc9b622fe1f5({
+        this.#cube = new $9bfcccd3418b958f$export$e176487c05830cc5(new $9bfcccd3418b958f$export$33e43285f7406bd5(1, 1, 1), new $9bfcccd3418b958f$export$5023a9a8114806b8({
             "color": options.color
         }));
         this.#cube.name = 'cube';
         this.#spline = options.spline ?? false;
-        this.#wire = new $9bfcccd3418b958f$export$e176487c05830cc5(new $9bfcccd3418b958f$export$33e43285f7406bd5(1.25, 1.25, 1.25), new $9bfcccd3418b958f$export$55cbcc9b622fe1f5({
+        this.#wire = new $9bfcccd3418b958f$export$e176487c05830cc5(new $9bfcccd3418b958f$export$33e43285f7406bd5(1.25, 1.25, 1.25), new $9bfcccd3418b958f$export$5023a9a8114806b8({
             wireframe: true,
             "color": options.selectionColor
         }));
@@ -51697,7 +51697,7 @@ class $2448d7118068346d$export$3e8a3cc8713efbec {
     }
     resetColor(color) {
         console.assert(this.#cube !== null, "Cube not defined");
-        const material = new $9bfcccd3418b958f$export$55cbcc9b622fe1f5({
+        const material = new $9bfcccd3418b958f$export$5023a9a8114806b8({
             color: color
         });
         //const material = new three.MeshPhongMaterial({ color })
@@ -51709,7 +51709,7 @@ class $2448d7118068346d$export$3e8a3cc8713efbec {
     }
     set texture(src) {
         if (!src) {
-            const material = new $9bfcccd3418b958f$export$55cbcc9b622fe1f5({
+            const material = new $9bfcccd3418b958f$export$5023a9a8114806b8({
                 color: this.color
             });
             //const material = new three.MeshPhongMaterial({ color: this.color });
